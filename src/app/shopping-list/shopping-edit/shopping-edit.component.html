@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
-    <form>
+    <form (ngSubmit)="onAddItem(f)" #f="ngForm">
       <div class="row">
         <div class="col-sm-5 form-group">
           <label for="name">Name</label>
@@ -8,7 +8,8 @@
             class="form-control"
             type="text"
             id="name"
-            #nameInput
+            name="name"
+            ngModel
           >
         </div>
         <div class="col-sm-2 form-group">
@@ -17,14 +18,15 @@
             class="form-control"
             type="number"
             id="amount"
-            #amountInput
+            name="amount"
+            ngModel
           >
           <!-- Было amoutInput. Не переживай. Все хорошо. Я научу тебя читать ошибки -->
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <button class="btn btn-success" type="submit" style="margin-right: 5px;" (click)="onAddItem()">Add</button>
+          <button class="btn btn-success" type="submit" style="margin-right: 5px;">Add</button>
           <button class="btn btn-danger" type="button" style="margin-right: 5px;">Delete</button>
           <button class="btn btn-primary" type="button">Clear</button>
         </div>
